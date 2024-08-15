@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BICHO WILL FLY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="BICHO WILL FLY">
+    <meta name="keywords"
+        content="flappy bird, flap, wing, pipe, create, creator, Dong Nguyen, iPhone game, android game, create your own game">
+    <meta property="og:title" content="BICHO WILL FLY">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #000;
+        }
+
+        #screen canvas {
+            margin: 0 auto;
+        }
+
+        #github {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+
+        #loading {
+            position: absolute;
+            font-family: Verdana, sans-serif;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+      .fade-out {
+          opacity: 0;
+          visibility: hidden;
+      }
+
+        #loading img {
+          width: 50%; 
+          height: 50%;
+          object-fit: contain;
+        }
+
+        #toggle,
+        #buttons a {
+            margin-left: 5px;
+        }
+
+        .footer-buttons {
+            margin: 1px;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="scripts/globals.js"></script>
+    <script src="scripts/state.js"></script>
+</head>
+
+<body>
+    <div id="loading">
+      <img src="/assets/bicho_loading_screen.jpg"/>
+    </div>
+    <div id="screen"></div>
+    <div id="github" style="display: none;"></div>
+    <div class="footer-buttons">
+        <button id="toggle" type="button" class="btn btn-default">
+            <i id="toggle_icon" class="fa fa-minus"></i>
+        </button>
+        <span id="buttons">
+            <a href="share.php?id=66bbf4eea6461" class="btn btn-primary" role="button">
+                <i class="fa fa-share"></i> Share
+            </a>
+            <a href="https://jup.ag/swap/bicho-SOL" target=”_blank” class="btn btn-success" role="button">
+                <i class="fa fa-money"></i> Buy bicho
+            </a>
+        </span>
+    </div>
+
+    <!-- Flappy Bird Game -->
+    <script src="scripts/flappy.min.js?v=202481920"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
