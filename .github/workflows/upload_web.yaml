@@ -19,7 +19,7 @@ jobs:
       with:
         server: 77.37.37.44
         username:  ${{ secrets.ftp_user }}
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.ft_password }}
         server-dir: public_html/
         exclude: .git*
           - .git*/**
