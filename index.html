@@ -21,6 +21,16 @@
             padding: 0;
             height: 100%;
             background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #screen {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #screen canvas {
@@ -44,15 +54,15 @@
             transform: translateY(-50%);
         }
 
-      .fade-out {
-          opacity: 0;
-          visibility: hidden;
-      }
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
 
         #loading img {
-          width: 50%; 
-          height: 50%;
-          object-fit: contain;
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
         }
 
         #toggle,
@@ -62,10 +72,44 @@
 
         .footer-buttons {
             margin: 1px;
-            position: absolute;
-            bottom: 5px;
-            left: 5px;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #000;
         }
+
+        /* New banner styling */
+        #banner {
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+            #banner {
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+#banner img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    @media (min-width: 768px) {
+        #banner img {
+            width: 50%; /* Adjust this value to whatever size you want on larger screens */
+            height: auto; /* Maintain aspect ratio */
+        }
+    }
+
+
     </style>
 
     <!-- Scripts -->
@@ -75,23 +119,31 @@
 
 <body>
     <div id="loading">
-      <img src="/assets/bicho_loading_screen.jpg"/>
+        <img src="/assets/bicho_loading_screen.jpg" />
     </div>
     <div id="screen"></div>
     <div id="github" style="display: none;"></div>
+
+    <!-- New banner element -->
+    <div id="banner">
+        <img src="/assets/bicho_banner.jpg"/>
+    </div>
+
+    
     <div class="footer-buttons">
-        <button id="toggle" type="button" class="btn btn-default">
+        <button id="toggle" type="button" class="btn btn-default btn-lg">
             <i id="toggle_icon" class="fa fa-minus"></i>
         </button>
         <span id="buttons">
-            <a href="share.php?id=66bbf4eea6461" class="btn btn-primary" role="button">
+            <a href="share.php?id=66bbf4eea6461" class="btn btn-primary btn-lg" role="button">
                 <i class="fa fa-share"></i> Share
             </a>
-            <a href="https://jup.ag/swap/bicho-SOL" target=”_blank” class="btn btn-success" role="button">
+            <a href="https://jup.ag/swap/bicho-SOL" target="_blank" class="btn btn-success btn-lg" role="button">
                 <i class="fa fa-money"></i> Buy bicho
             </a>
         </span>
     </div>
+    
 
     <!-- Flappy Bird Game -->
     <script src="scripts/flappy.min.js?v=202481920"></script>
