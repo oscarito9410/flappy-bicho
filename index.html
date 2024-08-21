@@ -1,165 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>BICHO WILL FLY</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="BICHO WILL FLY">
-    <meta name="keywords" content="flappy bird, flap, wing, pipe, create, creator, Dong Nguyen, iPhone game, android game, create your own game">
-    <meta property="og:title" content="BICHO WILL FLY">
-    <meta property="og:type" content="website">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicho Gameboy</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #000;
-            display: block; /* Changed from flex to block */
-        }
-
-        #banner {
-            color: #000;
-            text-align: center;
-            padding: 0px;
-            margin-bottom: 2px;
-            border-radius: 5px;
-            width: 100%;
-            background-color: #000000; /* Background color for visibility */
-            display: none;
-        }
-
-        #banner img {
-            width: 100%;
-            height: auto; /* Maintain aspect ratio */
-        }
-
-        @media (min-width: 768px) {
-            #banner img {
-                width: 50%; /* Adjust this value to whatever size you want on larger screens */
-                height: auto; /* Maintain aspect ratio */
-            }
-        }
-
-        #screen {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%; /* Adjust this value to create space for banner and footer */
+            height: 100vh;
+            background: url('/assets/bicho_background_desktop.jpg') no-repeat center center fixed; /* Add background image */
+            background-size: cover; /* Ensure it covers the entire background */
         }
-
-        #screen canvas {
-            margin: 0 auto;
+        .game-container {
+            position: relative;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
         }
-
-        #github {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-        }
-
-        #loading {
-            position: absolute;
-            font-family: Verdana, sans-serif;
+        .gameboy {
             width: 100%;
-            text-align: center;
-            color: white;
-            font-size: 24px;
-            top: 50%;
-            transform: translateY(-50%);
+            height: 100%;
+            display: block;
+        }
+        .screen-canvas {
+            position: absolute;
+            top: 10%;
+            left: 35%; /* Adjust this value to move the canvas horizontally */
+            width: 50%; /* Adjust this value to match the width of the screen */
+            height: 75%; /* Adjust this value to match the height of the screen */
         }
 
-        .fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #loading img {
-            width: 50%;
-            height: 50%;
-            object-fit: contain;
-        }
-
-       
-        .footer-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-        background-color: #000000;
-    }
-
-    /* Override any custom styles to ensure buttons are smaller */
-    .footer-buttons .btn {
-        padding: 5px 10px; /* Smaller padding */
-        font-size: 0.8em; /* Smaller font size */
-        border-radius: 20px; /* Smaller border radius */
-    }
-
-    .footer-buttons .btn-primary {
-        background-color: #ff6347;
-        border: none;
-    }
-
-    .footer-buttons .btn-success {
-        background-color: #32cd32;
-        border: none;
-    }
-
-    .footer-buttons .btn-default {
-        background-color: #ffda44;
-        border: none;
-    }
-
-        #toggle_icon {
-            font-size: 1.5em;
+        canvas {
+            width: 70%!important;
+            height: 55%!important;
         }
     </style>
-
-    <!-- Scripts -->
     <script src="scripts/globals.js"></script>
     <script src="scripts/state.js"></script>
 </head>
-
 <body>
-    <div id="banner">
-        <img src="/assets/bicho_banner.jpg" alt="img" loading="lazy"/>
-    </div>
 
     <div id="loading">
         <img src="/assets/bicho_loading_screen.jpg" />
     </div>
 
-    <div id="screen"></div>
-
     <div id="github" style="display: none;"></div>
 
-    <div id="footerButtons" class="footer-buttons">
-        <button id="toggle" type="button" class="btn btn-default btn-sm">
-            <i id="toggle_icon" class="fa fa-paw"></i>
-        </button>
-        <span id="buttons">
-            <a href="share.php?id=66bbf4eea6461" class="btn btn-primary btn-sm" role="button">
-                <i class="fa fa-share"></i> Share the Bicho
-            </a>
-            <a href="https://jup.ag/swap/bicho-SOL" target="_blank" class="btn btn-success btn-sm" role="button">
-                <i class="fa fa-bone"></i> Buy Bicho
-            </a>
-        </span>
+    <div class="game-container">
+        <img src="/assets/bicho_game_boy_1.png" alt="Bicho Gameboy" class="gameboy">
+        <div id="screen" class="screen-canvas"></div>
     </div>
-    
 
     <!-- Flappy Bird Game -->
-    <script src="scripts/flappy.min.js?v=202481920"></script>
+    <script src="scripts/flappy.min.js?v=394934043034043"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>
