@@ -1,56 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bicho Gameboy</title>
     <style>
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url('/assets/bicho_background_desktop.jpg') no-repeat center center fixed; /* Add background image */
-            background-size: cover; /* Ensure it covers the entire background */
-        }
-        .game-container {
-            position: relative;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-        }
-        .gameboy {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-        .screen-canvas {
-            position: absolute;
-            top: 10%;
-            left: 35%; /* Adjust this value to move the canvas horizontally */
-            width: 50%; /* Adjust this value to match the width of the screen */
-            height: 75%; /* Adjust this value to match the height of the screen */
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: url('/assets/bicho_background_desktop.jpg') no-repeat center center fixed; /* Add background image */
+        background-size: cover; /* Ensure it covers the entire background */
+      }
+
+      @media (width > 768px) {
+        .gameboy-mobile {
+          display: none;
         }
 
-        canvas {
-            width: 70%!important;
-            height: 55%!important;
+        .gameboy-desktop {
+          display: block;
+          width: 100%;
+          height: 100%;
         }
+
+        .game-container {
+          position: relative;
+          width: 100%; /* Full width */
+          height: auto; /* Full height */
+          max-width: 1000px;
+        }
+
+        .screen-canvas {
+          position: absolute;
+          top: 10%;
+          left: 35%;
+          width: 50%;
+          height: 75%;
+        }
+      }
+
+      @media (width <= 768px) {
+        .gameboy-desktop {
+          display: none;
+        }
+
+        .game-container {
+          position: relative;
+          width: auto; /* Full width */
+          height: 100%; /* Full height */
+        }
+
+        .gameboy-mobile {
+          display: block;
+          width: auto;
+          height: 100%;
+        }
+        .screen-canvas {
+          position: absolute;
+          top: 10%;
+          left: 15%;
+          width: 100%;
+          height: 75%;
+        }
+      }
+
+      @media (width <= 410px) {
+        .game-container {
+          position: relative;
+          width: 100%; /* Full width */
+          height: auto; /* Full height */
+        }
+      }
+
+      canvas {
+        width: 70% !important;
+        height: 55% !important;
+      }
     </style>
     <script src="scripts/globals.js"></script>
     <script src="scripts/state.js"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="loading">
-        <img src="/assets/bicho_loading_screen.jpg" />
+      <img src="/assets/bicho_loading_screen.jpg" />
     </div>
 
-    <div id="github" style="display: none;"></div>
+    <div id="github" style="display: none"></div>
 
     <div class="game-container">
-        <img src="/assets/bicho_game_boy_1.png" alt="Bicho Gameboy" class="gameboy">
-        <div id="screen" class="screen-canvas"></div>
+      <img src="/assets/bicho_game_boy_1.png" alt="Bicho Gameboy" class="gameboy-desktop" />
+      <img src="/assets/bicho_game_boy_cropped.png" alt="Bicho Gameboy" class="gameboy-mobile" />
+      <div id="screen" class="screen-canvas"></div>
     </div>
 
     <!-- Flappy Bird Game -->
@@ -59,5 +102,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</body>
+
+    <script>
+      // hide game container of mobile
+
+      //   // add listener to hide game container on mobile
+      //   window.addEventListener('resize', () => {
+      //     if (window.innerWidth < 768) {
+      //       document.querySelector('.gameboy-desktop').style.display = 'none';
+      //     } else {
+      //       document.querySelector('.gameboy-desktop').style.display = 'block';
+      //     }
+      //   });
+    </script>
+  </body>
 </html>
