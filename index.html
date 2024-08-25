@@ -40,6 +40,9 @@
           width: 50%;
           height: 75%;
         }
+        .gameboy-banner {
+            display:none;
+        }
       }
 
       @media (width <= 768px) {
@@ -65,6 +68,13 @@
           width: 100%;
           height: 75%;
         }
+        .gameboy-banner {
+            display:block;
+            width: 80%;
+            position: absolute;
+            top: -12%;
+            left: 10%;
+        }
       }
 
       @media (width <= 410px) {
@@ -78,8 +88,8 @@
         height: 55% !important;
       }
     </style>
-    <script src="scripts/globals.js"></script>
-    <script src="scripts/state.js"></script>
+    <script src="scripts/globals.js?v=1.0"></script>
+    <script src="scripts/state.js?v=1.1"></script>
   </head>
   <body>
     <div id="loading">
@@ -90,12 +100,15 @@
 
     <div class="game-container">
       <img src="/assets/bicho_game_boy_1.png" alt="Bicho Gameboy" class="gameboy-desktop" />
+      <!--
+      <img src="/assets/bichogameportraits.png" alt="Bicho Gameboy" class="gameboy-banner" />
+      -->
       <img src="/assets/bicho_game_boy_cropped.png" alt="Bicho Gameboy" class="gameboy-mobile" />
       <div id="screen" class="screen-canvas"></div>
     </div>
 
     <!-- Flappy Bird Game -->
-    <script src="scripts/flappy.min.js?v=394934043034043"></script>
+    <script src="scripts/flappy.min.js?v=3949340430340434"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Bootstrap -->

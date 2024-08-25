@@ -18,3 +18,8 @@ window.addEventListener('gameStateChange', function(event) {
 	        gameAudio.currentTime = 0;
 	    }
 });
+
+window.addEventListener('unload', function () {
+	gameAudio.pause();
+	gameAudio.currentTime = 0;
+});
