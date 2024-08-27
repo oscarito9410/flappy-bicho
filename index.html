@@ -11,7 +11,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: url('/assets/bicho_background_desktop.jpg') no-repeat center center fixed; /* Add background image */
+        background: url('/assets/bicho_background_dektop_new.png') no-repeat center center fixed; /* Add background image */
         background-size: cover; /* Ensure it covers the entire background */
       }
 
@@ -114,7 +114,7 @@
     <div class="game-container">
       <img src="/assets/bicho_game_boy_1.png" alt="Bicho Gameboy" class="gameboy-desktop" />
 
-      <img src="/assets/bichogameportraits.png" alt="Bicho Gameboy" class="gameboy-banner" />
+      <img src="/assets/bichogameportraits.png" alt="Bicho Gameboy" class="gameboy-banner" style="display:none" />
 
       <img src="/assets/bicho_game_boy_cropped.png" alt="Bicho Gameboy" class="gameboy-mobile" />
       <div id="screen" class="screen-canvas"></div>
@@ -129,7 +129,6 @@
 
     <script>
       window.addEventListener('load', function () {
-        document.querySelector('#loading').style.display = 'none';
         document.querySelector('.game-container').style.display = 'block';
       });
     </script>
