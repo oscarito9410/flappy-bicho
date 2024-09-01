@@ -18,6 +18,6 @@
 	var game_instructions = "TOUCH TO PUMP IT";
 
     // texts
-	var game_over = "GAMEOVER";
+	var game_over = "#FLUFFYEAH";
 	var high_score = "HIGH SCORE";
 	var try_again = "TOUCH TO TRY AGAIN";
